@@ -1,0 +1,46 @@
+[project]
+name = "django-smart-cache"
+version = "0.1.0"
+description = "Biblioteca de cache incrivelmente poderosa para Django."
+readme = "README.md"
+authors = [
+    { name = "Alan Gomes", email = "alan.gomes.ag28@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "django==2.2",
+    "djangorestframework==3.10",
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django Rest Framework",
+    "Framework :: Django Rest Framework :: 3.10",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-django>=4.11.1",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.test_settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+
+[tool.pyrefly]
+search_path = ["."]
