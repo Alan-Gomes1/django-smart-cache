@@ -33,6 +33,23 @@ INSTALLED_APPS = [
 ]
 ```
 
+> **Importante:** Para que o Django reconheça os decorators de cache e mapeie corretamente as models que invalidarão o cache, é necessário importar explicitamente as views ou viewsets que utilizam os decorators dentro do método `ready` do seu `apps.py`.
+>
+> Exemplo:
+> ```python
+> # myapp/apps.py
+> from django.apps import AppConfig
+>
+>
+> class MyAppConfig(AppConfig):
+>     name = "myapp"
+>
+>     def ready(self):
+>         from myapp import views
+>         from myapp.api import viewsets
+>         ...
+> ```
+
 Configure o cache do Django normalmente (exemplo com memória local):
 ```python
 CACHES = {
