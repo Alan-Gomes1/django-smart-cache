@@ -2,6 +2,14 @@
 
 ## Histórico de Mudanças
 
+## [0.1.2] - 2025-06-26
+### Adicionado
+- Criação do arquivo CHANGELOG.md documentando o histórico de versões.
+- Ajustes e melhorias na documentação do README.md, incluindo instruções mais claras sobre configuração e uso dos decorators.
+
+### Corrigido
+- Pequenas correções de formatação e exemplos na documentação.
+
 ## [0.1.1] - 2025-06-26
 ### Adicionado
 - Compatibilidade ampliada para Django 4.2 e 5.0.

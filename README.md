@@ -124,8 +124,8 @@ pytest
 ## Desenvolvimento
 
 - Código-fonte: `src/django_smart_cache/`
-- Testes: `src/tests/`
-- Exemplo de template: `src/tests/templates/cached_template.html`
+- Testes: `tests/`
+- Exemplo de template: `tests/templates/cached_template.html`
 
 ## Autor
 

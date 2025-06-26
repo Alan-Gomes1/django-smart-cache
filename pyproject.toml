@@ -1,6 +1,6 @@
 [project]
 name = "django-smart-cache"
-version = "0.1.1"
+version = "0.1.2"
 description = "Biblioteca de cache incrivelmente poderosa para Django."
 readme = "README.md"
 authors = [

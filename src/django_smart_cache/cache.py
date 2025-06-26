@@ -105,10 +105,10 @@ def _cache_function_view(view_func, prefix, timeout):
         except Exception:
             raise
 
-        if getattr(response, 'render') and callable(response.render):
+        if hasattr(response, 'render') and callable(response.render):
             response.render()
-            if response.status_code == 200:
-                cache.set(key, response, timeout)
+        if response.status_code == 200:
+            cache.set(key, response, timeout)
         return response
 
     return wrapper
@@ -149,7 +149,7 @@ def _get_models(models: List[str]) -> List[object]:
         try:
             model_classes.append(apps.get_model(path))
         except (LookupError, ValueError):
-            print(f"model não encontrada: {ERROR_MESSAGE}")
+            print(f"model {path} não encontrada: {ERROR_MESSAGE}")
             continue
     return model_classes
 
