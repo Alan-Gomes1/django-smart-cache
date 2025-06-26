@@ -1,6 +1,6 @@
 from typing import List
 
-from .cache import _cache_method, _get_models, _set_model_connection
+from .cache import _cache_function_view, _get_models, _set_model_connection
 
 
 def cache_view(models: List[str], timeout: int = 900):
@@ -16,9 +16,7 @@ def cache_view(models: List[str], timeout: int = 900):
 
     def decorator(view_cls):
         prefix = f"{view_cls.__module__}.{view_cls.__name__}"
-        _cache_method(view_cls, prefix, timeout)
         _set_model_connection(model_classes, prefix)
-
-        return view_cls
+        return _cache_function_view(view_cls, prefix, timeout)
 
     return decorator

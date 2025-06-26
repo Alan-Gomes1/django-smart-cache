@@ -5,6 +5,7 @@ from rest_framework.routers import DefaultRouter
 from .views import cached_api_view, cached_template_view
 from .viewsets import CachedViewSet
 
+
 router = DefaultRouter()
 router.register(r'cached', CachedViewSet, basename='cached')
 

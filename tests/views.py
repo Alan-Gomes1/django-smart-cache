@@ -12,6 +12,7 @@ def cached_api_view(request):
     count = CachedModel.objects.count()
     return Response({"count": count})
 
+
 @cache_view(models=["django_smart_cache.CachedModel"], timeout=30)
 def cached_template_view(request):
     count = CachedModel.objects.count()
